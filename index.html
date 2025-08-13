@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover"
+    />
+    <title>Hematology & Immunohematology Quiz</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="container">
+      <header class="quiz-header">
+        <h1>🧬 Hematology & Immunohematology Quiz</h1>
+        <p class="subtitle">
+          Test your knowledge with 48 comprehensive questions
+        </p>
+      </header>
+
+      <div id="start-screen" class="screen active">
+        <div class="start-content">
+          <div class="quiz-info">
+            <h2>Welcome to the Quiz!</h2>
+            <p>
+              This quiz covers essential topics in hematology and
+              immunohematology including:
+            </p>
+            <ul>
+              <li>Blood cell types and functions</li>
+              <li>Coagulation and hemostasis</li>
+              <li>Blood disorders and diseases</li>
+              <li>Laboratory testing and procedures</li>
+              <li>Blood banking and transfusion</li>
+            </ul>
+          </div>
+          <div class="quiz-settings">
+            <h3>Quiz Settings</h3>
+            <div class="setting-group">
+              <label for="question-count">Number of Questions:</label>
+              <select id="question-count">
+                <option value="10">10 Questions</option>
+                <option value="20">20 Questions</option>
+                <option value="48" selected>All 48 Questions</option>
+              </select>
+            </div>
+            <div class="setting-group">
+              <label for="time-limit">Time Limit (seconds):</label>
+              <select id="time-limit">
+                <option value="0">No Time Limit</option>
+                <option value="30">30 seconds per question</option>
+                <option value="60" selected>60 seconds per question</option>
+                <option value="120">2 minutes per question</option>
+              </select>
+            </div>
+            <div class="setting-group">
+              <label>
+                <input type="checkbox" id="shuffle-questions" checked />
+                Shuffle Questions
+              </label>
+            </div>
+          </div>
+          <button id="start-quiz" class="btn btn-primary">Start Quiz</button>
+        </div>
+      </div>
+
+      <div id="quiz-screen" class="screen">
+        <div class="quiz-progress">
+          <div class="progress-bar">
+            <div class="progress-fill" id="progress-fill"></div>
+          </div>
+          <div class="progress-text">
+            Question <span id="current-question">1</span> of
+            <span id="total-questions">48</span>
+          </div>
+          <div class="timer" id="timer"></div>
+        </div>
+
+        <div class="question-container">
+          <h2 id="question-text"></h2>
+          <div class="options-container" id="options-container"></div>
+        </div>
+
+        <div class="quiz-controls">
+          <button id="prev-question" class="btn btn-secondary" disabled>
+            Previous
+          </button>
+          <button id="next-question" class="btn btn-primary">
+            Next Question
+          </button>
+          <button
+            id="finish-quiz"
+            class="btn btn-success"
+            style="display: none"
+          >
+            Finish Quiz
+          </button>
+        </div>
+      </div>
+
+      <div id="results-screen" class="screen">
+        <div class="results-content">
+          <h2>Quiz Results</h2>
+          <div class="score-display">
+            <div class="score-circle">
+              <span id="score-percentage">0%</span>
+            </div>
+            <div class="score-details">
+              <p>
+                You got <span id="correct-answers">0</span> out of
+                <span id="total-answers">0</span> questions correct!
+              </p>
+              <p class="score-message" id="score-message"></p>
+            </div>
+          </div>
+
+          <div class="results-summary">
+            <h3>Question Review</h3>
+            <div id="question-review"></div>
+          </div>
+
+          <div class="action-buttons">
+            <button id="retake-quiz" class="btn btn-primary">
+              Take Quiz Again
+            </button>
+            <button id="download-results" class="btn btn-secondary">
+              Download Results
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <footer class="quiz-footer">
+      <p>&copy; 2025 Youssef Rajeh. All rights reserved.</p>
+    </footer>
+
+    <script src="quiz-data.js"></script>
+    <script src="quiz-app.js"></script>
+  </body>
+</html>
